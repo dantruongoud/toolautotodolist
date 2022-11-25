@@ -78,19 +78,16 @@ public class step {
         return name;
     }
 
-    public void choseTimeStar(String value) {
+    public void choseTime(String value1, String value2) {
         try {
-            Select time = new Select(selectTimeStar);
-            time.selectByValue(value);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
-    public void choseTimeEnd(String value) {
-        try {
-            Select time = new Select(selectTimeEnd);
-            time.selectByValue(value);
+            btnEdit.click();
+            Thread.sleep(1000);
+            Select time1 = new Select(selectTimeStar);
+            time1.selectByValue(value1);
+            Select time2 = new Select(selectTimeEnd);
+            time2.selectByValue(value2);
+            Thread.sleep(1000);
+            checkin();
         } catch (Exception e) {
             e.printStackTrace();
         }

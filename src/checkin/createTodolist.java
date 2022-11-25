@@ -50,47 +50,22 @@ public class createTodolist {
                 String name = index.verifyTodolist();
                 switch (name) {
                     case "Chào cờ và sinh hoạt đầu tuần":
-                        index.btnEdit.click();
-                        index.choseTimeStar("08:30");
-                        index.choseTimeEnd("09:00");
-                        Thread.sleep(1000);
-                        index.checkin();
+                        index.choseTime("08:30", "09:30");
                         break;
                     case "Dự án:":
-                        index.btnEdit.click();
-                        index.choseTimeStar("08:30");
-                        index.choseTimeEnd("09:30");
-                        Thread.sleep(1000);
-
-                        index.checkin();
+                        index.choseTime("08:30", "10:30");
                         break;
                     case "Happy hour":
-                        index.btnEdit.click();
-                        index.choseTimeStar("16:30");
-                        index.choseTimeEnd("17:30");
-                        Thread.sleep(1000);
-                        index.checkin();
+                        index.choseTime("16:30", "17:30");
                         break;
                     case "Checkin Nháp":
-                        index.btnEdit.click();
-                        index.choseTimeStar("17:00");
-                        index.choseTimeEnd("17:30");
-                        Thread.sleep(1000);
-                        index.checkin();
+                        index.choseTime("17:00", "17:30");
                         break;
                     case "Checkin 1:1":
-                        index.btnEdit.click();
-                        index.choseTimeStar("11:00");
-                        index.choseTimeEnd("12:00");
-                        Thread.sleep(1000);
-                        index.checkin();
+                        index.choseTime("11:00", "12:00");
                         break;
                     case "Checkin Plan Tuần":
-                        index.btnEdit.click();
-                        index.choseTimeStar("10:30");
-                        index.choseTimeEnd("11:30");
-                        Thread.sleep(1000);
-                        index.checkin();
+                        index.choseTime("10:00", "11:00");
                         break;
                 }
                 Thread.sleep(1200);
