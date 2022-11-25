@@ -29,8 +29,8 @@ public class createTodolist {
             // nhát cho đến chủ nhật
             // Có một cái click ở hàm createTodolist nên chỉ cần cho click từ ngày hiện tại
             // đến chủ nhật là đúng rồi nhé
-            index.chvDay.click();
-            index.waitForPageLoaded();
+            // index.chvDay.click();
+            // index.waitForPageLoaded();
             index.chvDay.click();
             index.waitForPageLoaded();
 
