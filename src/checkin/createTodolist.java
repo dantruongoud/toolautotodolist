@@ -7,11 +7,13 @@ import setupbase.baseSetup;
 
 public class createTodolist {
     int day;
-    String nameworks;
+    String nameworks, value1, value2;
 
-    public createTodolist(int day, String nameworks) {
+    public createTodolist(int day, String nameworks, String value1, String value2) {
         this.day = day;
         this.nameworks = nameworks;
+        this.value1 = value1;
+        this.value2 = value2;
     }
 
     public static void main(String[] args) {
@@ -35,40 +37,17 @@ public class createTodolist {
             index.waitForPageLoaded();
 
             createTodolist[] data = {
-                    new createTodolist(2, "Chào cờ và sinh hoạt đầu tuần"),
-                    new createTodolist(3, "Dự án: "),
-                    new createTodolist(4, "Happy hour"),
-                    new createTodolist(5, "Checkin Nháp"),
-                    new createTodolist(6, "Checkin 1:1"),
-                    new createTodolist(7, "Checkin Plan Tuần")
+                    new createTodolist(2, "Chào cờ và sinh hoạt đầu tuần", "08:30", "09:30"),
+                    new createTodolist(3, "Dự án: ", "08:30", "10:30"),
+                    new createTodolist(4, "Happy hour", "16:30", "17:30"),
+                    new createTodolist(5, "Checkin Nháp", "17:00", "17:30"),
+                    new createTodolist(6, "Checkin 1:1", "11:00", "12:00"),
+                    new createTodolist(7, "Checkin Plan Tuần", "10:00", "11:00")
             };
 
             for (int i = 0; i < data.length; i++) {
-                index.createTodolist(data[i].nameworks);
+                index.createTodolist(data[i].nameworks, data[i].value1, data[i].value2);
                 index.waitForPageLoaded();
-
-                String name = index.verifyTodolist();
-                switch (name) {
-                    case "Chào cờ và sinh hoạt đầu tuần":
-                        index.choseTime("08:30", "09:30");
-                        break;
-                    case "Dự án:":
-                        index.choseTime("08:30", "10:30");
-                        break;
-                    case "Happy hour":
-                        index.choseTime("16:30", "17:30");
-                        break;
-                    case "Checkin Nháp":
-                        index.choseTime("17:00", "17:30");
-                        break;
-                    case "Checkin 1:1":
-                        index.choseTime("11:00", "12:00");
-                        break;
-                    case "Checkin Plan Tuần":
-                        index.choseTime("10:00", "11:00");
-                        break;
-                }
-                Thread.sleep(1200);
             }
         } catch (Exception e) {
             e.printStackTrace();

@@ -93,7 +93,7 @@ public class step {
         }
     }
 
-    public void createTodolist(String nameworks) {
+    public void createTodolist(String nameworks, String value1, String value2) {
         try {
             chvDay.click();
             Thread.sleep(1000);
@@ -101,7 +101,13 @@ public class step {
             Thread.sleep(1000);
             txtNametodolist.sendKeys(nameworks);
             Thread.sleep(1000);
+            Select time1 = new Select(selectTimeStar);
+            time1.selectByValue(value1);
+            Select time2 = new Select(selectTimeEnd);
+            time2.selectByValue(value2);
             btnSave.click();
+            Thread.sleep(1000);
+            checkin();
         } catch (Exception e) {
             e.printStackTrace();
         }
